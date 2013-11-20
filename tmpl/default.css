@@ -1,0 +1,12 @@
+.mod_wow_raid_progress_mop tr {
+    background-repeat: no-repeat !important;
+    background-position: center right !important;
+}
+
+.mod_wow_raid_progress_mop tr.normal {
+    background-image: url('./images/normal.png');
+}
+
+.mod_wow_raid_progress_mop tr.heroic {
+    background-image: url('./images/heroic.png');
+}

@@ -23,11 +23,13 @@ $params->set('region', JString::strtolower($params->get('region')));
 $params->set('lang', JString::strtolower($params->get('lang', 'en')));
 $params->set('link', $params->get('link', 'battle.net'));
 
-$members = mod_wow_raid_progress_mop::_($params);
+$progress = new mod_wow_raid_progress_mop($params);
 
-if (!is_array($members)) {
-    echo $members;
+$raids = $progress->getRaids();
+
+if (!is_array($raids)) {
+    echo $raids;
     return;
 }
 
-require JModuleHelper::getLayoutPath($module->module, $params->get('layout', 'default_10'));
+require JModuleHelper::getLayoutPath($module->module, $params->get('layout', 'default'));

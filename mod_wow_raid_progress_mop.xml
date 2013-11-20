@@ -26,22 +26,12 @@
                 <field name="guild" type="text" default="" size="30" required="true" label="MOD_WOW_RAID_PROGRESS_MOP_GUILD_LABEL" />
                 <field name="realm" type="text" default="" size="30" required="true" label="MOD_WOW_RAID_PROGRESS_MOP_REALM_LABEL" />
                 <field name="region" type="list" default="" required="true" label="MOD_WOW_RAID_PROGRESS_MOP_REGION_LABEL">
-                    <option value="">-- select --</option>
+                    <option value="">JSELECT</option>
                     <option value="us">USA</option>
                     <option value="eu">Europe</option>
                     <option value="kr">Korea</option>
                     <option value="tw">Taiwan</option>
                     <option value="sea">Southeast Asia</option>
-                </field>
-                <field name="lang" type="list" default="" required="true" label="MOD_WOW_RAID_PROGRESS_MOP_LANG_LABEL">
-                    <option value="">-- select --</option>
-                    <option value="en">English</option>
-                    <option value="de">German</option>
-                    <option value="fr">Français</option>
-                    <option value="es">Español</option>
-                    <option value="it">Italiano</option>
-                    <option value="pt">Português</option>
-                    <option value="ru">Русский</option>
                 </field>
                 <field name="link" type="list" default="battle.net" required="true" label="MOD_WOW_RAID_PROGRESS_MOP_LINK_LABEL">
                     <option value="battle.net">battle.net</option>
@@ -49,6 +39,21 @@
                     <option value="wowdb.com">wowdb.com</option>
                     <option value="buffed.de">buffed.de</option>
                 </field>
+                <field name="hide" type="list" default="" multiple="true" label="MOD_WOW_RAID_PROGRESS_MOP_HIDE_LABEL">
+                    <option value="6738">MOD_WOW_RAID_PROGRESS_MOP_ZONE_6738</option>
+                    <option value="6622">MOD_WOW_RAID_PROGRESS_MOP_ZONE_6622</option>
+                    <option value="6067">MOD_WOW_RAID_PROGRESS_MOP_ZONE_6067</option>
+                    <option value="6297">MOD_WOW_RAID_PROGRESS_MOP_ZONE_6297</option>
+                    <option value="6125">MOD_WOW_RAID_PROGRESS_MOP_ZONE_6125</option>
+                </field>
+            </fieldset>
+            <fieldset name="heroic">
+                <field type="radio" class="btn-group" name="heroic" default="0" label="MOD_WOW_RAID_PROGRESS_MOP_HEROIC_LABEL" description="MOD_WOW_RAID_PROGRESS_MOP_HEROIC_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="ranks" type="integer" first="0" last="10" step="1" multiple="true" label="MOD_WOW_RAID_PROGRESS_MOP_RANKS_LABEL" description="MOD_WOW_RAID_PROGRESS_MOP_RANKS_DESC" />
+                <field name="successful" type="integer" first="5" last="25" step="1" default="5" label="MOD_WOW_RAID_PROGRESS_MOP_SUCCESSFUL_LABEL" description="MOD_WOW_RAID_PROGRESS_MOP_SUCCESSFUL_DESC" />
             </fieldset>
             <fieldset name="advanced">
                 <field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC"/>
@@ -58,4 +63,7 @@
             </fieldset>
         </fields>
     </config>
+    <updateservers>
+        <server type="collection" priority="1" name="z-index development">http://www.z-index.net/en/extensions.xml</server>
+    </updateservers>
 </extension>
