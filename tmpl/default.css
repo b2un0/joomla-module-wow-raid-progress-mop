@@ -18,12 +18,12 @@
 }
 
 .mod_wow_raid_progress_mop .header {
-    background: lightgrey;
-    cursor: pointer;
+    clear: both;
 }
 
 .mod_wow_raid_progress_mop .header span {
     float: right;
+    cursor: pointer;
 }
 
 .mod_wow_raid_progress_mop .normal,
