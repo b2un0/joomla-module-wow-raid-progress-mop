@@ -1,12 +1,45 @@
-.mod_wow_raid_progress_mop tr {
-    background-repeat: no-repeat !important;
-    background-position: center right !important;
+.mod_wow_raid_progress_mop ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
-.mod_wow_raid_progress_mop tr.normal {
+.mod_wow_raid_progress_mop li {
+    margin: 0;
+    padding: 0;
+}
+
+.mod_wow_raid_progress_mop .npcs {
+    display: none;
+}
+
+.mod_wow_raid_progress_mop .npcs.open {
+    display: block;
+}
+
+.mod_wow_raid_progress_mop .header {
+    background: lightgrey;
+    cursor: pointer;
+}
+
+.mod_wow_raid_progress_mop .header span {
+    float: right;
+}
+
+.mod_wow_raid_progress_mop .normal,
+.mod_wow_raid_progress_mop .heroic {
+    display: inline-block;
+    float: right;
+    width: 18px;
+    height: 18px;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.mod_wow_raid_progress_mop .normal {
     background-image: url('./images/normal.png');
 }
 
-.mod_wow_raid_progress_mop tr.heroic {
+.mod_wow_raid_progress_mop .heroic {
     background-image: url('./images/heroic.png');
 }

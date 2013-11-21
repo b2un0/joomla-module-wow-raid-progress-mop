@@ -33,13 +33,29 @@
                     <option value="tw">Taiwan</option>
                     <option value="sea">Southeast Asia</option>
                 </field>
+                <field name="lang" type="list" default="" required="true" label="MOD_WOW_RAID_PROGRESS_MOP_LANG_LABEL">
+                    <option value="">JSELECT</option>
+                    <option value="en">English</option>
+                    <option value="de">German</option>
+                    <option value="fr">Français</option>
+                    <option value="es">Español</option>
+                    <option value="it">Italiano</option>
+                    <option value="pt">Português</option>
+                    <option value="ru">Русский</option>
+                </field>
                 <field name="link" type="list" default="battle.net" required="true" label="MOD_WOW_RAID_PROGRESS_MOP_LINK_LABEL">
                     <option value="battle.net">battle.net</option>
                     <option value="wowhead.com">wowhead.com</option>
                     <option value="wowdb.com">wowdb.com</option>
-                    <option value="buffed.de">buffed.de</option>
                 </field>
-                <field name="hide" type="list" default="" multiple="true" label="MOD_WOW_RAID_PROGRESS_MOP_HIDE_LABEL">
+                <field name="hide" type="list" default="" multiple="true" label="MOD_WOW_RAID_PROGRESS_MOP_HIDE_LABEL" description="MOD_WOW_RAID_PROGRESS_MOP_HIDE_DESC">
+                    <option value="6738">MOD_WOW_RAID_PROGRESS_MOP_ZONE_6738</option>
+                    <option value="6622">MOD_WOW_RAID_PROGRESS_MOP_ZONE_6622</option>
+                    <option value="6067">MOD_WOW_RAID_PROGRESS_MOP_ZONE_6067</option>
+                    <option value="6297">MOD_WOW_RAID_PROGRESS_MOP_ZONE_6297</option>
+                    <option value="6125">MOD_WOW_RAID_PROGRESS_MOP_ZONE_6125</option>
+                </field>
+                <field name="opened" type="list" default="current" multiple="true" label="MOD_WOW_RAID_PROGRESS_MOP_OPENED_LABEL" description="MOD_WOW_RAID_PROGRESS_MOP_OPENED_DESC">
                     <option value="6738">MOD_WOW_RAID_PROGRESS_MOP_ZONE_6738</option>
                     <option value="6622">MOD_WOW_RAID_PROGRESS_MOP_ZONE_6622</option>
                     <option value="6067">MOD_WOW_RAID_PROGRESS_MOP_ZONE_6067</option>
