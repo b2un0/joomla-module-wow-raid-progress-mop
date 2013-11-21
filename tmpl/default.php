@@ -31,7 +31,7 @@ JFactory::getDocument()->addScript(JUri::base(true) . '/modules/' . $module->mod
                         <li class="npc">
                             <?php echo JHtml::_('link', $data['link'], JText::_('MOD_WOW_RAID_PROGRESS_MOP_NPC_' . $npc), array('target' => '_blank')); ?>
                             <span
-                                class="<?php echo ($data['heroic'] === true) ? ' heroic' : ($data['normal'] === true) ? ' normal' : ''; ?>"> </span>
+                                class="<?php echo ($data['heroic'] === true) ? ' heroic' : (($data['normal'] === true) ? ' normal' : ''); ?>"> </span>
                         </li>
                     <?php endforeach; ?>
                 </ul>
