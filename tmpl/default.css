@@ -18,6 +18,10 @@
     padding: 0px;
 }
 
+.mod_wow_raid_progress_mop .npc:last-child {
+    border-bottom: none;
+}
+
 .mod_wow_raid_progress_mop .npcs.open {
     display: block;
 }
