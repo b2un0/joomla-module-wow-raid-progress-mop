@@ -31,7 +31,6 @@
     margin-top: 5px;
     height: 35px;
     padding-top: 15px;
-    padding-left: 3px;
     cursor: pointer;
 }
 
@@ -40,6 +39,7 @@
     color: #fff;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
     font-weight: bolder;
+    padding-left: 3px;
 }
 
 .mod_wow_raid_progress_mop .header .p {
