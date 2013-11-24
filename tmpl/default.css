@@ -37,7 +37,7 @@
 
 .mod_wow_raid_progress_mop .header,
 .mod_wow_raid_progress_mop a {
-    color: gold;
+    color: #fff;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
     font-weight: bolder;
 }
