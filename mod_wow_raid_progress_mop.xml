@@ -55,7 +55,7 @@
                     <option value="6297">MOD_WOW_RAID_PROGRESS_MOP_ZONE_6297</option>
                     <option value="6125">MOD_WOW_RAID_PROGRESS_MOP_ZONE_6125</option>
                 </field>
-                <field name="opened" type="list" default="current" multiple="true" label="MOD_WOW_RAID_PROGRESS_MOP_OPENED_LABEL" description="MOD_WOW_RAID_PROGRESS_MOP_OPENED_DESC">
+                <field name="opened" type="list" default="6738" multiple="true" label="MOD_WOW_RAID_PROGRESS_MOP_OPENED_LABEL" description="MOD_WOW_RAID_PROGRESS_MOP_OPENED_DESC">
                     <option value="6738">MOD_WOW_RAID_PROGRESS_MOP_ZONE_6738</option>
                     <option value="6622">MOD_WOW_RAID_PROGRESS_MOP_ZONE_6622</option>
                     <option value="6067">MOD_WOW_RAID_PROGRESS_MOP_ZONE_6067</option>

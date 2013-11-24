@@ -53,7 +53,7 @@
 
 .mod_wow_raid_progress_mop .header .k {
     float: right;
-    padding: 3px;
+    padding-right: 3px;
 }
 
 .mod_wow_raid_progress_mop .normal,
