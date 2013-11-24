@@ -370,6 +370,9 @@ final class mod_wow_raid_progress_mop
             }
 
             $zone['opened'] = in_array($zoneId, (array)$this->params->get('opened'));
+
+            $zone['stats']['bosses'] = count($zone['npcs']);
+            $zone['stats']['percent'] = round(($zone['stats']['kills']/$zone['stats']['bosses'])*100);
         }
 
         return $this->raids;

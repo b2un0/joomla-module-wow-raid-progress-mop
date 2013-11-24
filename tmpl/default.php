@@ -9,7 +9,7 @@
 
 defined('_JEXEC') or die;
 
-if (JVersion::isCompatible('3')) {
+if (version_compare(JVERSION, 3, '>=')) {
     JHtml::_('jquery.framework');
 } else {
     JHtml::_('behavior.framework', true);
@@ -22,16 +22,17 @@ JFactory::getDocument()->addScript(JUri::base(true) . '/modules/' . $module->mod
     <?php foreach ($raids as $zoneId => $zone) : ?>
         <ul class="z<?php echo $zoneId; ?>">
             <li class="header">
-                <?php echo JHtml::_('link', $zone['link'], JText::_('MOD_WOW_RAID_PROGRESS_MOP_ZONE_' . $zoneId), array('target' => '_blank')); ?>
-                <span><?php echo JText::sprintf('MOD_WOW_RAID_PROGRESS_MOP_MODE_' . strtoupper($zone['stats']['mode']), $zone['stats']['kills'], count($zone['npcs'])); ?></span>
+                <span class="p" style="width:<?php echo $zone['stats']['percent']; ?>%;"></span>
+                <?php //echo JHtml::_('link', $zone['link'], JText::_('MOD_WOW_RAID_PROGRESS_MOP_ZONE_' . $zoneId), array('target' => '_blank')); ?>
+                <?php echo JText::_('MOD_WOW_RAID_PROGRESS_MOP_ZONE_' . $zoneId); ?>
+                <span class="k" title="<?php echo $zone['stats']['percent']; ?>%"><?php echo JText::sprintf('MOD_WOW_RAID_PROGRESS_MOP_MODE_' . strtoupper($zone['stats']['mode']), $zone['stats']['kills'], $zone['stats']['bosses']); ?></span>
             </li>
             <li class="npcs<?php echo ($zone['opened'] == true) ? ' open' : ''; ?>">
                 <ul>
                     <?php foreach ($zone['npcs'] as $npc => $data) : ?>
                         <li class="npc">
                             <?php echo JHtml::_('link', $data['link'], JText::_('MOD_WOW_RAID_PROGRESS_MOP_NPC_' . $npc), array('target' => '_blank')); ?>
-                            <span
-                                class="<?php echo ($data['heroic'] === true) ? ' heroic' : (($data['normal'] === true) ? ' normal' : ''); ?>"> </span>
+                            <span class="<?php echo ($data['heroic'] === true) ? ' heroic' : (($data['normal'] === true) ? ' normal' : ''); ?>"> </span>
                         </li>
                     <?php endforeach; ?>
                 </ul>
