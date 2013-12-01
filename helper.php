@@ -320,28 +320,32 @@ final class mod_wow_raid_progress_mop
 
     public function getRaids()
     {
-        $url = 'http://' . $this->params->get('region') . '.battle.net/api/wow/guild/' . $this->params->get('realm') . '/' . $this->params->get('guild') . '?fields=members,achievements';
+        if ($this->params->get('mode') == 'auto') {
 
-        $result = $this->remoteContent($url);
+            $url = 'http://' . $this->params->get('region') . '.battle.net/api/wow/guild/' . $this->params->get('realm') . '/' . $this->params->get('guild') . '?fields=members,achievements';
 
-        if (!is_object($result)) {
-            return $result;
+            $result = $this->remoteContent($url);
+
+            if (!is_object($result)) {
+                return $result;
+            }
+
+            $this->checkNormal($result->achievements);
+
+            if ($this->params->get('heroic') && $this->params->get('ranks')) {
+                $this->checkHeroic($result->members);
+            } else {
+                // remove Ra-den if only normal mode visible
+                if (isset($this->raids[6622])) {
+                    unset($this->raids[6622]['npcs'][69473]);
+                }
+            }
+
         }
 
         if ($hidden = $this->params->get('hide')) {
             foreach ($hidden as $hide) {
                 unset($this->raids[$hide]);
-            }
-        }
-
-        $this->checkNormal($result->achievements);
-
-        if ($this->params->get('heroic') && $this->params->get('ranks')) {
-            $this->checkHeroic($result->members);
-        } else {
-            // remove Ra-den if only normal mode visible
-            if (isset($this->raids[6622])) {
-                unset($this->raids[6622]['npcs'][69473]);
             }
         }
 
@@ -389,7 +393,7 @@ final class mod_wow_raid_progress_mop
 
         if (!$result = $cache->get($key)) {
             try {
-                $http = new JHttp(new JRegistry(), new JHttpTransportCurl(new JRegistry()));
+                $http = new JHttp(new JRegistry, new JHttpTransportCurl(new JRegistry));
                 $http->setOption('userAgent', 'Joomla! ' . JVERSION . '; WoW Raid Progress - MoP; php/' . phpversion());
 
                 $result = $http->get($url, null, $this->params->get('timeout', 10));
