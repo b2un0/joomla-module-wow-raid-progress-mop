@@ -7,13 +7,12 @@
  * @license    GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
  */
 
-defined('_JEXEC') or die();
+defined('_JEXEC') or die;
 
 final class mod_wow_raid_progress_mop
 {
 
     private $params = null;
-    private $maxLevel = 90;
     private $raids = array(
         // Siege of Orgrimmar
         6738 => array(
@@ -346,6 +345,8 @@ final class mod_wow_raid_progress_mop
             }
         }
 
+        $this->adjustments();
+
         // at last replace links and count mode-kills
         foreach ($this->raids as $zoneId => &$zone) {
             $zone['link'] = $this->link($zone['link'], $zoneId);
@@ -372,7 +373,7 @@ final class mod_wow_raid_progress_mop
             $zone['opened'] = in_array($zoneId, (array)$this->params->get('opened'));
 
             $zone['stats']['bosses'] = count($zone['npcs']);
-            $zone['stats']['percent'] = round(($zone['stats']['kills']/$zone['stats']['bosses'])*100);
+            $zone['stats']['percent'] = round(($zone['stats']['kills'] / $zone['stats']['bosses']) * 100);
         }
 
         return $this->raids;
@@ -400,9 +401,7 @@ final class mod_wow_raid_progress_mop
         }
 
         if ($result->code != 200) {
-            return __CLASS__ . ' HTTP-Status ' . JHtml::_('link', 'http://wikipedia.org/wiki/List_of_HTTP_status_codes#' . $result->code, $result->code, array(
-                    'target' => '_blank'
-                ));
+            return __CLASS__ . ' HTTP-Status ' . JHtml::_('link', 'http://wikipedia.org/wiki/List_of_HTTP_status_codes#' . $result->code, $result->code, array('target' => '_blank'));
         }
 
         return json_decode($result->body);
@@ -421,7 +420,7 @@ final class mod_wow_raid_progress_mop
     {
         $heroicIds = $this->getHeroicIDs();
         foreach ($members as &$member) {
-            if (in_array($member->rank, $this->params->get('ranks')) && $member->character->level == $this->maxLevel) {
+            if (in_array($member->rank, $this->params->get('ranks'))) {
                 $member->achievements = $this->loadMember($member->character->name);
                 if ($member->achievements) {
                     foreach ($heroicIds as $id => $zoneNpc) {
@@ -464,6 +463,35 @@ final class mod_wow_raid_progress_mop
         }
 
         return $result->achievements;
+    }
+
+    private function adjustments()
+    {
+        foreach ($this->raids as $zoneId => &$zone) {
+            foreach ($zone['npcs'] as $npcId => &$npc) {
+                if ($npc['heroic'] === true || $npc['normal'] === true) {
+                    continue;
+                }
+                switch ($this->params->get('adjust_' . $npcId)) {
+                    default:
+                        continue;
+                        break;
+
+                    case 'no':
+                        $npc['normal'] = false;
+                        $npc['heroic'] = false;
+                        break;
+
+                    case 'normal':
+                        $npc['normal'] = true;
+                        break;
+
+                    case 'heroic':
+                        $npc['heroic'] = true;
+                        break;
+                }
+            }
+        }
     }
 
     private function link($link, $id, $npc = false)
