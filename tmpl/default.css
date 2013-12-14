@@ -20,14 +20,6 @@
 .mod_wow_raid_progress_mop .npc {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     padding: 0 0 0 3px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    clear: both;
-}
-
-.mod_wow_raid_progress_mop .npc a {
-    float: left;
 }
 
 .mod_wow_raid_progress_mop .npc:last-child {
