@@ -14,6 +14,7 @@
         <filename>helper.php</filename>
         <folder>tmpl</folder>
     </files>
+    <scriptfile>script.installer.php</scriptfile>
     <languages folder="language">
         <language tag="en-GB">en-GB/en-GB.mod_wow_raid_progress_mop.ini</language>
         <language tag="en-GB">en-GB/en-GB.mod_wow_raid_progress_mop.sys.ini</language>
@@ -27,7 +28,7 @@
         <fields name="params">
             <fieldset name="basic">
                 <field name="mode" type="radio" class="btn-group" default="manual" required="true" label="MOD_WOW_RAID_PROGRESS_MOP_MODE_LABEL">
-                <option value="manual">MOD_WOW_RAID_PROGRESS_MOP_MODE_MANUAL</option>
+                    <option value="manual">MOD_WOW_RAID_PROGRESS_MOP_MODE_MANUAL</option>
                     <option value="auto">MOD_WOW_RAID_PROGRESS_MOP_MODE_AUTO</option>
                 </field>
                 <field name="lang" type="list" default="" required="true" label="MOD_WOW_RAID_PROGRESS_MOP_LANG_LABEL">

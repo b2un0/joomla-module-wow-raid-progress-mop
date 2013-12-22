@@ -11,8 +11,6 @@ defined('_JEXEC') or die;
 
 if (version_compare(JVERSION, 3, '>=')) {
     JHtml::_('jquery.framework');
-} else {
-    JHtml::_('behavior.framework', true);
 }
 
 JFactory::getDocument()->addStyleSheet(JUri::base(true) . '/modules/' . $module->module . '/tmpl/default.css');
@@ -23,7 +21,6 @@ JFactory::getDocument()->addScript(JUri::base(true) . '/modules/' . $module->mod
         <ul class="z<?php echo $zoneId; ?>">
             <li class="header">
                 <span class="p" style="width:<?php echo $zone['stats']['percent']; ?>%;"></span>
-                <?php //echo JHtml::_('link', $zone['link'], JText::_('MOD_WOW_RAID_PROGRESS_MOP_ZONE_' . $zoneId), array('target' => '_blank')); ?>
                 <?php echo JText::_('MOD_WOW_RAID_PROGRESS_MOP_ZONE_' . $zoneId); ?>
                 <span class="k" title="<?php echo $zone['stats']['percent']; ?>%"><?php echo JText::sprintf('MOD_WOW_RAID_PROGRESS_MOP_MODE_' . strtoupper($zone['stats']['mode']), $zone['stats']['kills'], $zone['stats']['bosses']); ?></span>
             </li>
