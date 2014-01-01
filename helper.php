@@ -315,8 +315,14 @@ final class ModWowRaidProgressMopHelper
 
     private function __construct(JRegistry &$params)
     {
-        $params->set('guild', rawurlencode(JString::strtolower($params->get('guild'))));
-        $params->set('realm', rawurlencode(JString::strtolower($params->get('realm'))));
+        if (version_compare(JVERSION, 3, '>=')) {
+            $params->set('guild', rawurlencode(JString::strtolower($params->get('guild'))));
+            $params->set('realm', rawurlencode(JString::strtolower($params->get('realm'))));
+        } else {
+            $params->set('realm', str_replace(array('%20', ' '), '-', $params->get('realm')));
+            $params->set('guild', str_replace(array('%20', ' '), '%2520', $params->get('guild')));
+        }
+
         $params->set('region', JString::strtolower($params->get('region')));
         $params->set('lang', JString::strtolower($params->get('lang', 'en')));
         $params->set('link', $params->get('link', 'battle.net'));
