@@ -9,25 +9,11 @@
 
 defined('_JEXEC') or die;
 
-require_once dirname(__FILE__) . '/helper.php';
+JLoader::register('ModWowRaidProgressMopHelper', dirname(__FILE__) . '/helper.php');
 
-if (version_compare(JVERSION, 3, '>=')) {
-    $params->set('guild', rawurlencode(JString::strtolower($params->get('guild'))));
-    $params->set('realm', rawurlencode(JString::strtolower($params->get('realm'))));
-} else {
-    $params->set('realm', str_replace(array('%20', ' '), '-', $params->get('realm')));
-    $params->set('guild', str_replace(array('%20', ' '), '%2520', $params->get('guild')));
-}
+$raids = ModWowRaidProgressMopHelper::getData($params);
 
-$params->set('region', JString::strtolower($params->get('region')));
-$params->set('lang', JString::strtolower($params->get('lang', 'en')));
-$params->set('link', $params->get('link', 'battle.net'));
-
-$progress = new mod_wow_raid_progress_mop($params);
-
-$raids = $progress->getRaids();
-
-if (!is_array($raids)) {
+if (!$params->get('ajax') && !is_array($raids)) {
     echo $raids;
     return;
 }
