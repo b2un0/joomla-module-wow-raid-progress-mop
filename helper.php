@@ -3,7 +3,7 @@
 /**
  * @author     Branko Wilhelm <branko.wilhelm@gmail.com>
  * @link       http://www.z-index.net
- * @copyright  (c) 2013 Branko Wilhelm
+ * @copyright  (c) 2013 - 2014 Branko Wilhelm
  * @license    GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
  */
 
@@ -430,7 +430,7 @@ final class ModWowRaidProgressMopHelper
     {
         $cache = JFactory::getCache('wow', 'output');
         $cache->setCaching(1);
-        $cache->setLifeTime($this->params->get('cache_time', 24) * 60 + rand(0, 60)); // randomize cache time a little bit for each url
+        $cache->setLifeTime($this->params->get('cache_time', 24) * 60 * 60 + rand(0, 60)); // randomize cache time a little bit for each url
 
         $key = md5($url);
 
