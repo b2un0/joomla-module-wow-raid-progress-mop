@@ -19,8 +19,8 @@
     <languages folder="language">
         <language tag="en-GB">en-GB/en-GB.mod_wow_raid_progress_mop.ini</language>
         <language tag="en-GB">en-GB/en-GB.mod_wow_raid_progress_mop.sys.ini</language>
-        <language tag="de-DE">de-de/de-DE.mod_wow_raid_progress_mop.ini</language>
-        <language tag="de-DE">de-de/de-DE.mod_wow_raid_progress_mop.sys.ini</language>
+        <language tag="de-DE">de-DE/de-DE.mod_wow_raid_progress_mop.ini</language>
+        <language tag="de-DE">de-DE/de-DE.mod_wow_raid_progress_mop.sys.ini</language>
     </languages>
     <updateservers>
         <server type="collection" priority="1" name="z-index development">http://www.z-index.net/en/extensions.xml</server>
