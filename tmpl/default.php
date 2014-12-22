@@ -31,7 +31,7 @@ JFactory::getDocument()->addScript('media/' . $module->module . '/js/default.js'
                     <?php echo JText::_('MOD_WOW_RAID_PROGRESS_MOP_ZONE_' . $zoneId); ?>
                     <span class="k" title="<?php echo $zone['stats']['percent']; ?>%"><?php echo JText::sprintf('MOD_WOW_RAID_PROGRESS_MOP_MODE_' . strtoupper($zone['stats']['mode']), $zone['stats']['kills'], $zone['stats']['bosses']); ?></span>
                 </li>
-                <li class="npcs<?php echo ($zone['opened'] == true) ? ' open' : ''; ?>">
+                <li class="npcs<?php echo ($zone['collapsed'] == true) ? ' open' : ''; ?>">
                     <ul>
                         <?php foreach ($zone['npcs'] as $npc => $data) : ?>
                             <li class="npc">

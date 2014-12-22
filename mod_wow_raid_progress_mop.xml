@@ -32,7 +32,7 @@
     <config>
         <fields name="params" addfieldpath="/plugins/system/wow/fields/">
             <fieldset name="basic">
-                <field name="opened" type="list" default="6738" multiple="true" label="MOD_WOW_RAID_PROGRESS_MOP_OPENED_LABEL" description="MOD_WOW_RAID_PROGRESS_MOP_OPENED_DESC">
+                <field name="collapsed" type="list" default="6738" multiple="true" label="MOD_WOW_RAID_PROGRESS_MOP_COLLAPSED_LABEL" description="MOD_WOW_RAID_PROGRESS_MOP_COLLAPSED_DESC">
                     <option value="6738">MOD_WOW_RAID_PROGRESS_MOP_ZONE_6738</option>
                     <option value="6622">MOD_WOW_RAID_PROGRESS_MOP_ZONE_6622</option>
                     <option value="6067">MOD_WOW_RAID_PROGRESS_MOP_ZONE_6067</option>
@@ -51,9 +51,9 @@
                     <option value="auto">MOD_WOW_RAID_PROGRESS_MOP_MODE_AUTO</option>
                 </field>
                 <field name="difficulty" type="list" multiple="true" class="btn-group" default="normal" label="MOD_WOW_RAID_PROGRESS_MOP_DIFFICULTY_LABEL" description="MOD_WOW_RAID_PROGRESS_MOP_DIFFICULTY_DESC">
-                    <option value="normal" disabled="true">MOD_WOW_RAID_PROGRESS_CATA_RAID_NORMAL</option>
-                    <option value="heroic">MOD_WOW_RAID_PROGRESS_CATA_RAID_HEROIC</option>
-                    <option value="mythic">MOD_WOW_RAID_PROGRESS_CATA_RAID_MYTHIC</option>
+                    <option value="normal" disabled="true">MOD_WOW_RAID_PROGRESS_MOP_RAID_NORMAL</option>
+                    <option value="heroic">MOD_WOW_RAID_PROGRESS_MOP_RAID_HEROIC</option>
+                    <option value="mythic">MOD_WOW_RAID_PROGRESS_MOP_RAID_MYTHIC</option>
                 </field>
                 <field name="ranks" type="integer" first="0" last="10" step="1" multiple="true" label="MOD_WOW_RAID_PROGRESS_MOP_RANKS_LABEL" description="MOD_WOW_RAID_PROGRESS_MOP_RANKS_DESC" />
                 <field name="successful" type="integer" first="5" last="25" step="1" default="5" label="MOD_WOW_RAID_PROGRESS_MOP_SUCCESSFUL_LABEL" description="MOD_WOW_RAID_PROGRESS_MOP_SUCCESSFUL_DESC" />
@@ -70,84 +70,98 @@
                     <option value="no">MOD_WOW_RAID_PROGRESS_MOP_RAID_NO</option>
                     <option value="normal">MOD_WOW_RAID_PROGRESS_MOP_RAID_NORMAL</option>
                     <option value="heroic">MOD_WOW_RAID_PROGRESS_MOP_RAID_HEROIC</option>
+                    <option value="mythic">MOD_WOW_RAID_PROGRESS_MOP_RAID_MYTHIC</option>
                 </field>
                 <field name="adjust_71475" default="auto" type="radio" class="btn-group" label="MOD_WOW_RAID_PROGRESS_MOP_NPC_71475">
                     <option value="auto">MOD_WOW_RAID_PROGRESS_MOP_RAID_AUTO</option>
                     <option value="no">MOD_WOW_RAID_PROGRESS_MOP_RAID_NO</option>
                     <option value="normal">MOD_WOW_RAID_PROGRESS_MOP_RAID_NORMAL</option>
                     <option value="heroic">MOD_WOW_RAID_PROGRESS_MOP_RAID_HEROIC</option>
+                    <option value="mythic">MOD_WOW_RAID_PROGRESS_MOP_RAID_MYTHIC</option>
                 </field>
                 <field name="adjust_71967" default="auto" type="radio" class="btn-group" label="MOD_WOW_RAID_PROGRESS_MOP_NPC_71967">
                     <option value="auto">MOD_WOW_RAID_PROGRESS_MOP_RAID_AUTO</option>
                     <option value="no">MOD_WOW_RAID_PROGRESS_MOP_RAID_NO</option>
                     <option value="normal">MOD_WOW_RAID_PROGRESS_MOP_RAID_NORMAL</option>
                     <option value="heroic">MOD_WOW_RAID_PROGRESS_MOP_RAID_HEROIC</option>
+                    <option value="mythic">MOD_WOW_RAID_PROGRESS_MOP_RAID_MYTHIC</option>
                 </field>
                 <field name="adjust_71734" default="auto" type="radio" class="btn-group" label="MOD_WOW_RAID_PROGRESS_MOP_NPC_71734">
                     <option value="auto">MOD_WOW_RAID_PROGRESS_MOP_RAID_AUTO</option>
                     <option value="no">MOD_WOW_RAID_PROGRESS_MOP_RAID_NO</option>
                     <option value="normal">MOD_WOW_RAID_PROGRESS_MOP_RAID_NORMAL</option>
                     <option value="heroic">MOD_WOW_RAID_PROGRESS_MOP_RAID_HEROIC</option>
+                    <option value="mythic">MOD_WOW_RAID_PROGRESS_MOP_RAID_MYTHIC</option>
                 </field>
                 <field name="adjust_72957" default="auto" type="radio" class="btn-group" label="MOD_WOW_RAID_PROGRESS_MOP_NPC_72957">
                     <option value="auto">MOD_WOW_RAID_PROGRESS_MOP_RAID_AUTO</option>
                     <option value="no">MOD_WOW_RAID_PROGRESS_MOP_RAID_NO</option>
                     <option value="normal">MOD_WOW_RAID_PROGRESS_MOP_RAID_NORMAL</option>
                     <option value="heroic">MOD_WOW_RAID_PROGRESS_MOP_RAID_HEROIC</option>
+                    <option value="mythic">MOD_WOW_RAID_PROGRESS_MOP_RAID_MYTHIC</option>
                 </field>
                 <field name="adjust_71466" default="auto" type="radio" class="btn-group" label="MOD_WOW_RAID_PROGRESS_MOP_NPC_71466">
                     <option value="auto">MOD_WOW_RAID_PROGRESS_MOP_RAID_AUTO</option>
                     <option value="no">MOD_WOW_RAID_PROGRESS_MOP_RAID_NO</option>
                     <option value="normal">MOD_WOW_RAID_PROGRESS_MOP_RAID_NORMAL</option>
                     <option value="heroic">MOD_WOW_RAID_PROGRESS_MOP_RAID_HEROIC</option>
+                    <option value="mythic">MOD_WOW_RAID_PROGRESS_MOP_RAID_MYTHIC</option>
                 </field>
                 <field name="adjust_71859" default="auto" type="radio" class="btn-group" label="MOD_WOW_RAID_PROGRESS_MOP_NPC_71859">
                     <option value="auto">MOD_WOW_RAID_PROGRESS_MOP_RAID_AUTO</option>
                     <option value="no">MOD_WOW_RAID_PROGRESS_MOP_RAID_NO</option>
                     <option value="normal">MOD_WOW_RAID_PROGRESS_MOP_RAID_NORMAL</option>
                     <option value="heroic">MOD_WOW_RAID_PROGRESS_MOP_RAID_HEROIC</option>
+                    <option value="mythic">MOD_WOW_RAID_PROGRESS_MOP_RAID_MYTHIC</option>
                 </field>
                 <field name="adjust_71515" default="auto" type="radio" class="btn-group" label="MOD_WOW_RAID_PROGRESS_MOP_NPC_71515">
                     <option value="auto">MOD_WOW_RAID_PROGRESS_MOP_RAID_AUTO</option>
                     <option value="no">MOD_WOW_RAID_PROGRESS_MOP_RAID_NO</option>
                     <option value="normal">MOD_WOW_RAID_PROGRESS_MOP_RAID_NORMAL</option>
                     <option value="heroic">MOD_WOW_RAID_PROGRESS_MOP_RAID_HEROIC</option>
+                    <option value="mythic">MOD_WOW_RAID_PROGRESS_MOP_RAID_MYTHIC</option>
                 </field>
                 <field name="adjust_71454" default="auto" type="radio" class="btn-group" label="MOD_WOW_RAID_PROGRESS_MOP_NPC_71454">
                     <option value="auto">MOD_WOW_RAID_PROGRESS_MOP_RAID_AUTO</option>
                     <option value="no">MOD_WOW_RAID_PROGRESS_MOP_RAID_NO</option>
                     <option value="normal">MOD_WOW_RAID_PROGRESS_MOP_RAID_NORMAL</option>
                     <option value="heroic">MOD_WOW_RAID_PROGRESS_MOP_RAID_HEROIC</option>
+                    <option value="mythic">MOD_WOW_RAID_PROGRESS_MOP_RAID_MYTHIC</option>
                 </field>
                 <field name="adjust_71889" default="auto" type="radio" class="btn-group" label="MOD_WOW_RAID_PROGRESS_MOP_NPC_71889">
                     <option value="auto">MOD_WOW_RAID_PROGRESS_MOP_RAID_AUTO</option>
                     <option value="no">MOD_WOW_RAID_PROGRESS_MOP_RAID_NO</option>
                     <option value="normal">MOD_WOW_RAID_PROGRESS_MOP_RAID_NORMAL</option>
                     <option value="heroic">MOD_WOW_RAID_PROGRESS_MOP_RAID_HEROIC</option>
+                    <option value="mythic">MOD_WOW_RAID_PROGRESS_MOP_RAID_MYTHIC</option>
                 </field>
                 <field name="adjust_71529" default="auto" type="radio" class="btn-group" label="MOD_WOW_RAID_PROGRESS_MOP_NPC_71529">
                     <option value="auto">MOD_WOW_RAID_PROGRESS_MOP_RAID_AUTO</option>
                     <option value="no">MOD_WOW_RAID_PROGRESS_MOP_RAID_NO</option>
                     <option value="normal">MOD_WOW_RAID_PROGRESS_MOP_RAID_NORMAL</option>
                     <option value="heroic">MOD_WOW_RAID_PROGRESS_MOP_RAID_HEROIC</option>
+                    <option value="mythic">MOD_WOW_RAID_PROGRESS_MOP_RAID_MYTHIC</option>
                 </field>
                 <field name="adjust_71504" default="auto" type="radio" class="btn-group" label="MOD_WOW_RAID_PROGRESS_MOP_NPC_71504">
                     <option value="auto">MOD_WOW_RAID_PROGRESS_MOP_RAID_AUTO</option>
                     <option value="no">MOD_WOW_RAID_PROGRESS_MOP_RAID_NO</option>
                     <option value="normal">MOD_WOW_RAID_PROGRESS_MOP_RAID_NORMAL</option>
                     <option value="heroic">MOD_WOW_RAID_PROGRESS_MOP_RAID_HEROIC</option>
+                    <option value="mythic">MOD_WOW_RAID_PROGRESS_MOP_RAID_MYTHIC</option>
                 </field>
                 <field name="adjust_71152" default="auto" type="radio" class="btn-group" label="MOD_WOW_RAID_PROGRESS_MOP_NPC_71152">
                     <option value="auto">MOD_WOW_RAID_PROGRESS_MOP_RAID_AUTO</option>
                     <option value="no">MOD_WOW_RAID_PROGRESS_MOP_RAID_NO</option>
                     <option value="normal">MOD_WOW_RAID_PROGRESS_MOP_RAID_NORMAL</option>
                     <option value="heroic">MOD_WOW_RAID_PROGRESS_MOP_RAID_HEROIC</option>
+                    <option value="mythic">MOD_WOW_RAID_PROGRESS_MOP_RAID_MYTHIC</option>
                 </field>
                 <field name="adjust_71865" default="auto" type="radio" class="btn-group" label="MOD_WOW_RAID_PROGRESS_MOP_NPC_71865">
                     <option value="auto">MOD_WOW_RAID_PROGRESS_MOP_RAID_AUTO</option>
                     <option value="no">MOD_WOW_RAID_PROGRESS_MOP_RAID_NO</option>
                     <option value="normal">MOD_WOW_RAID_PROGRESS_MOP_RAID_NORMAL</option>
                     <option value="heroic">MOD_WOW_RAID_PROGRESS_MOP_RAID_HEROIC</option>
+                    <option value="mythic">MOD_WOW_RAID_PROGRESS_MOP_RAID_MYTHIC</option>
                 </field>
                 <field type="spacer" class="label" label="MOD_WOW_RAID_PROGRESS_MOP_ZONE_6622" />
                 <field name="adjust_69465" default="auto" type="radio" class="btn-group" label="MOD_WOW_RAID_PROGRESS_MOP_NPC_69465">
@@ -155,78 +169,91 @@
                     <option value="no">MOD_WOW_RAID_PROGRESS_MOP_RAID_NO</option>
                     <option value="normal">MOD_WOW_RAID_PROGRESS_MOP_RAID_NORMAL</option>
                     <option value="heroic">MOD_WOW_RAID_PROGRESS_MOP_RAID_HEROIC</option>
+                    <option value="mythic">MOD_WOW_RAID_PROGRESS_MOP_RAID_MYTHIC</option>
                 </field>
                 <field name="adjust_68476" default="auto" type="radio" class="btn-group" label="MOD_WOW_RAID_PROGRESS_MOP_NPC_68476">
                     <option value="auto">MOD_WOW_RAID_PROGRESS_MOP_RAID_AUTO</option>
                     <option value="no">MOD_WOW_RAID_PROGRESS_MOP_RAID_NO</option>
                     <option value="normal">MOD_WOW_RAID_PROGRESS_MOP_RAID_NORMAL</option>
                     <option value="heroic">MOD_WOW_RAID_PROGRESS_MOP_RAID_HEROIC</option>
+                    <option value="mythic">MOD_WOW_RAID_PROGRESS_MOP_RAID_MYTHIC</option>
                 </field>
                 <field name="adjust_69134" default="auto" type="radio" class="btn-group" label="MOD_WOW_RAID_PROGRESS_MOP_NPC_69134">
                     <option value="auto">MOD_WOW_RAID_PROGRESS_MOP_RAID_AUTO</option>
                     <option value="no">MOD_WOW_RAID_PROGRESS_MOP_RAID_NO</option>
                     <option value="normal">MOD_WOW_RAID_PROGRESS_MOP_RAID_NORMAL</option>
                     <option value="heroic">MOD_WOW_RAID_PROGRESS_MOP_RAID_HEROIC</option>
+                    <option value="mythic">MOD_WOW_RAID_PROGRESS_MOP_RAID_MYTHIC</option>
                 </field>
                 <field name="adjust_67977" default="auto" type="radio" class="btn-group" label="MOD_WOW_RAID_PROGRESS_MOP_NPC_67977">
                     <option value="auto">MOD_WOW_RAID_PROGRESS_MOP_RAID_AUTO</option>
                     <option value="no">MOD_WOW_RAID_PROGRESS_MOP_RAID_NO</option>
                     <option value="normal">MOD_WOW_RAID_PROGRESS_MOP_RAID_NORMAL</option>
                     <option value="heroic">MOD_WOW_RAID_PROGRESS_MOP_RAID_HEROIC</option>
+                    <option value="mythic">MOD_WOW_RAID_PROGRESS_MOP_RAID_MYTHIC</option>
                 </field>
                 <field name="adjust_70212" default="auto" type="radio" class="btn-group" label="MOD_WOW_RAID_PROGRESS_MOP_NPC_70212">
                     <option value="auto">MOD_WOW_RAID_PROGRESS_MOP_RAID_AUTO</option>
                     <option value="no">MOD_WOW_RAID_PROGRESS_MOP_RAID_NO</option>
                     <option value="normal">MOD_WOW_RAID_PROGRESS_MOP_RAID_NORMAL</option>
                     <option value="heroic">MOD_WOW_RAID_PROGRESS_MOP_RAID_HEROIC</option>
+                    <option value="mythic">MOD_WOW_RAID_PROGRESS_MOP_RAID_MYTHIC</option>
                 </field>
                 <field name="adjust_69712" default="auto" type="radio" class="btn-group" label="MOD_WOW_RAID_PROGRESS_MOP_NPC_69712">
                     <option value="auto">MOD_WOW_RAID_PROGRESS_MOP_RAID_AUTO</option>
                     <option value="no">MOD_WOW_RAID_PROGRESS_MOP_RAID_NO</option>
                     <option value="normal">MOD_WOW_RAID_PROGRESS_MOP_RAID_NORMAL</option>
                     <option value="heroic">MOD_WOW_RAID_PROGRESS_MOP_RAID_HEROIC</option>
+                    <option value="mythic">MOD_WOW_RAID_PROGRESS_MOP_RAID_MYTHIC</option>
                 </field>
                 <field name="adjust_68036" default="auto" type="radio" class="btn-group" label="MOD_WOW_RAID_PROGRESS_MOP_NPC_68036">
                     <option value="auto">MOD_WOW_RAID_PROGRESS_MOP_RAID_AUTO</option>
                     <option value="no">MOD_WOW_RAID_PROGRESS_MOP_RAID_NO</option>
                     <option value="normal">MOD_WOW_RAID_PROGRESS_MOP_RAID_NORMAL</option>
                     <option value="heroic">MOD_WOW_RAID_PROGRESS_MOP_RAID_HEROIC</option>
+                    <option value="mythic">MOD_WOW_RAID_PROGRESS_MOP_RAID_MYTHIC</option>
                 </field>
                 <field name="adjust_69017" default="auto" type="radio" class="btn-group" label="MOD_WOW_RAID_PROGRESS_MOP_NPC_69017">
                     <option value="auto">MOD_WOW_RAID_PROGRESS_MOP_RAID_AUTO</option>
                     <option value="no">MOD_WOW_RAID_PROGRESS_MOP_RAID_NO</option>
                     <option value="normal">MOD_WOW_RAID_PROGRESS_MOP_RAID_NORMAL</option>
                     <option value="heroic">MOD_WOW_RAID_PROGRESS_MOP_RAID_HEROIC</option>
+                    <option value="mythic">MOD_WOW_RAID_PROGRESS_MOP_RAID_MYTHIC</option>
                 </field>
                 <field name="adjust_69427" default="auto" type="radio" class="btn-group" label="MOD_WOW_RAID_PROGRESS_MOP_NPC_69427">
                     <option value="auto">MOD_WOW_RAID_PROGRESS_MOP_RAID_AUTO</option>
                     <option value="no">MOD_WOW_RAID_PROGRESS_MOP_RAID_NO</option>
                     <option value="normal">MOD_WOW_RAID_PROGRESS_MOP_RAID_NORMAL</option>
                     <option value="heroic">MOD_WOW_RAID_PROGRESS_MOP_RAID_HEROIC</option>
+                    <option value="mythic">MOD_WOW_RAID_PROGRESS_MOP_RAID_MYTHIC</option>
                 </field>
                 <field name="adjust_68078" default="auto" type="radio" class="btn-group" label="MOD_WOW_RAID_PROGRESS_MOP_NPC_68078">
                     <option value="auto">MOD_WOW_RAID_PROGRESS_MOP_RAID_AUTO</option>
                     <option value="no">MOD_WOW_RAID_PROGRESS_MOP_RAID_NO</option>
                     <option value="normal">MOD_WOW_RAID_PROGRESS_MOP_RAID_NORMAL</option>
                     <option value="heroic">MOD_WOW_RAID_PROGRESS_MOP_RAID_HEROIC</option>
+                    <option value="mythic">MOD_WOW_RAID_PROGRESS_MOP_RAID_MYTHIC</option>
                 </field>
                 <field name="adjust_68905" default="auto" type="radio" class="btn-group" label="MOD_WOW_RAID_PROGRESS_MOP_NPC_68905">
                     <option value="auto">MOD_WOW_RAID_PROGRESS_MOP_RAID_AUTO</option>
                     <option value="no">MOD_WOW_RAID_PROGRESS_MOP_RAID_NO</option>
                     <option value="normal">MOD_WOW_RAID_PROGRESS_MOP_RAID_NORMAL</option>
                     <option value="heroic">MOD_WOW_RAID_PROGRESS_MOP_RAID_HEROIC</option>
+                    <option value="mythic">MOD_WOW_RAID_PROGRESS_MOP_RAID_MYTHIC</option>
                 </field>
                 <field name="adjust_68397" default="auto" type="radio" class="btn-group" label="MOD_WOW_RAID_PROGRESS_MOP_NPC_68397">
                     <option value="auto">MOD_WOW_RAID_PROGRESS_MOP_RAID_AUTO</option>
                     <option value="no">MOD_WOW_RAID_PROGRESS_MOP_RAID_NO</option>
                     <option value="normal">MOD_WOW_RAID_PROGRESS_MOP_RAID_NORMAL</option>
                     <option value="heroic">MOD_WOW_RAID_PROGRESS_MOP_RAID_HEROIC</option>
+                    <option value="mythic">MOD_WOW_RAID_PROGRESS_MOP_RAID_MYTHIC</option>
                 </field>
                 <field name="adjust_69473" default="auto" type="radio" class="btn-group" label="MOD_WOW_RAID_PROGRESS_MOP_NPC_69473">
                     <option value="auto">MOD_WOW_RAID_PROGRESS_MOP_RAID_AUTO</option>
                     <option value="no">MOD_WOW_RAID_PROGRESS_MOP_RAID_NO</option>
                     <!--<option value="normal">MOD_WOW_RAID_PROGRESS_MOP_RAID_NORMAL</option>-->
                     <option value="heroic">MOD_WOW_RAID_PROGRESS_MOP_RAID_HEROIC</option>
+                    <option value="mythic">MOD_WOW_RAID_PROGRESS_MOP_RAID_MYTHIC</option>
                 </field>
                 <field type="spacer" class="label" label="MOD_WOW_RAID_PROGRESS_MOP_ZONE_6067" />
                 <field name="adjust_60583" default="auto" type="radio" class="btn-group" label="MOD_WOW_RAID_PROGRESS_MOP_NPC_60583">
@@ -234,24 +261,28 @@
                     <option value="no">MOD_WOW_RAID_PROGRESS_MOP_RAID_NO</option>
                     <option value="normal">MOD_WOW_RAID_PROGRESS_MOP_RAID_NORMAL</option>
                     <option value="heroic">MOD_WOW_RAID_PROGRESS_MOP_RAID_HEROIC</option>
+                    <option value="mythic">MOD_WOW_RAID_PROGRESS_MOP_RAID_MYTHIC</option>
                 </field>
                 <field name="adjust_62442" default="auto" type="radio" class="btn-group" label="MOD_WOW_RAID_PROGRESS_MOP_NPC_62442">
                     <option value="auto">MOD_WOW_RAID_PROGRESS_MOP_RAID_AUTO</option>
                     <option value="no">MOD_WOW_RAID_PROGRESS_MOP_RAID_NO</option>
                     <option value="normal">MOD_WOW_RAID_PROGRESS_MOP_RAID_NORMAL</option>
                     <option value="heroic">MOD_WOW_RAID_PROGRESS_MOP_RAID_HEROIC</option>
+                    <option value="mythic">MOD_WOW_RAID_PROGRESS_MOP_RAID_MYTHIC</option>
                 </field>
                 <field name="adjust_62983" default="auto" type="radio" class="btn-group" label="MOD_WOW_RAID_PROGRESS_MOP_NPC_62983">
                     <option value="auto">MOD_WOW_RAID_PROGRESS_MOP_RAID_AUTO</option>
                     <option value="no">MOD_WOW_RAID_PROGRESS_MOP_RAID_NO</option>
                     <option value="normal">MOD_WOW_RAID_PROGRESS_MOP_RAID_NORMAL</option>
                     <option value="heroic">MOD_WOW_RAID_PROGRESS_MOP_RAID_HEROIC</option>
+                    <option value="mythic">MOD_WOW_RAID_PROGRESS_MOP_RAID_MYTHIC</option>
                 </field>
                 <field name="adjust_60999" default="auto" type="radio" class="btn-group" label="MOD_WOW_RAID_PROGRESS_MOP_NPC_60999">
                     <option value="auto">MOD_WOW_RAID_PROGRESS_MOP_RAID_AUTO</option>
                     <option value="no">MOD_WOW_RAID_PROGRESS_MOP_RAID_NO</option>
                     <option value="normal">MOD_WOW_RAID_PROGRESS_MOP_RAID_NORMAL</option>
                     <option value="heroic">MOD_WOW_RAID_PROGRESS_MOP_RAID_HEROIC</option>
+                    <option value="mythic">MOD_WOW_RAID_PROGRESS_MOP_RAID_MYTHIC</option>
                 </field>
                 <field type="spacer" class="label" label="MOD_WOW_RAID_PROGRESS_MOP_ZONE_6297" />
                 <field name="adjust_62980" default="auto" type="radio" class="btn-group" label="MOD_WOW_RAID_PROGRESS_MOP_NPC_62980">
@@ -259,36 +290,42 @@
                     <option value="no">MOD_WOW_RAID_PROGRESS_MOP_RAID_NO</option>
                     <option value="normal">MOD_WOW_RAID_PROGRESS_MOP_RAID_NORMAL</option>
                     <option value="heroic">MOD_WOW_RAID_PROGRESS_MOP_RAID_HEROIC</option>
+                    <option value="mythic">MOD_WOW_RAID_PROGRESS_MOP_RAID_MYTHIC</option>
                 </field>
                 <field name="adjust_62543" default="auto" type="radio" class="btn-group" label="MOD_WOW_RAID_PROGRESS_MOP_NPC_62543">
                     <option value="auto">MOD_WOW_RAID_PROGRESS_MOP_RAID_AUTO</option>
                     <option value="no">MOD_WOW_RAID_PROGRESS_MOP_RAID_NO</option>
                     <option value="normal">MOD_WOW_RAID_PROGRESS_MOP_RAID_NORMAL</option>
                     <option value="heroic">MOD_WOW_RAID_PROGRESS_MOP_RAID_HEROIC</option>
+                    <option value="mythic">MOD_WOW_RAID_PROGRESS_MOP_RAID_MYTHIC</option>
                 </field>
                 <field name="adjust_62164" default="auto" type="radio" class="btn-group" label="MOD_WOW_RAID_PROGRESS_MOP_NPC_62164">
                     <option value="auto">MOD_WOW_RAID_PROGRESS_MOP_RAID_AUTO</option>
                     <option value="no">MOD_WOW_RAID_PROGRESS_MOP_RAID_NO</option>
                     <option value="normal">MOD_WOW_RAID_PROGRESS_MOP_RAID_NORMAL</option>
                     <option value="heroic">MOD_WOW_RAID_PROGRESS_MOP_RAID_HEROIC</option>
+                    <option value="mythic">MOD_WOW_RAID_PROGRESS_MOP_RAID_MYTHIC</option>
                 </field>
                 <field name="adjust_62397" default="auto" type="radio" class="btn-group" label="MOD_WOW_RAID_PROGRESS_MOP_NPC_62397">
                     <option value="auto">MOD_WOW_RAID_PROGRESS_MOP_RAID_AUTO</option>
                     <option value="no">MOD_WOW_RAID_PROGRESS_MOP_RAID_NO</option>
                     <option value="normal">MOD_WOW_RAID_PROGRESS_MOP_RAID_NORMAL</option>
                     <option value="heroic">MOD_WOW_RAID_PROGRESS_MOP_RAID_HEROIC</option>
+                    <option value="mythic">MOD_WOW_RAID_PROGRESS_MOP_RAID_MYTHIC</option>
                 </field>
                 <field name="adjust_62511" default="auto" type="radio" class="btn-group" label="MOD_WOW_RAID_PROGRESS_MOP_NPC_62511">
                     <option value="auto">MOD_WOW_RAID_PROGRESS_MOP_RAID_AUTO</option>
                     <option value="no">MOD_WOW_RAID_PROGRESS_MOP_RAID_NO</option>
                     <option value="normal">MOD_WOW_RAID_PROGRESS_MOP_RAID_NORMAL</option>
                     <option value="heroic">MOD_WOW_RAID_PROGRESS_MOP_RAID_HEROIC</option>
+                    <option value="mythic">MOD_WOW_RAID_PROGRESS_MOP_RAID_MYTHIC</option>
                 </field>
                 <field name="adjust_62837" default="auto" type="radio" class="btn-group" label="MOD_WOW_RAID_PROGRESS_MOP_NPC_62837">
                     <option value="auto">MOD_WOW_RAID_PROGRESS_MOP_RAID_AUTO</option>
                     <option value="no">MOD_WOW_RAID_PROGRESS_MOP_RAID_NO</option>
                     <option value="normal">MOD_WOW_RAID_PROGRESS_MOP_RAID_NORMAL</option>
                     <option value="heroic">MOD_WOW_RAID_PROGRESS_MOP_RAID_HEROIC</option>
+                    <option value="mythic">MOD_WOW_RAID_PROGRESS_MOP_RAID_MYTHIC</option>
                 </field>
                 <field type="spacer" class="label" label="MOD_WOW_RAID_PROGRESS_MOP_ZONE_6125" />
                 <field name="adjust_60047" default="auto" type="radio" class="btn-group" label="MOD_WOW_RAID_PROGRESS_MOP_NPC_60047">
@@ -296,36 +333,42 @@
                     <option value="no">MOD_WOW_RAID_PROGRESS_MOP_RAID_NO</option>
                     <option value="normal">MOD_WOW_RAID_PROGRESS_MOP_RAID_NORMAL</option>
                     <option value="heroic">MOD_WOW_RAID_PROGRESS_MOP_RAID_HEROIC</option>
+                    <option value="mythic">MOD_WOW_RAID_PROGRESS_MOP_RAID_MYTHIC</option>
                 </field>
                 <field name="adjust_60009" default="auto" type="radio" class="btn-group" label="MOD_WOW_RAID_PROGRESS_MOP_NPC_60009">
                     <option value="auto">MOD_WOW_RAID_PROGRESS_MOP_RAID_AUTO</option>
                     <option value="no">MOD_WOW_RAID_PROGRESS_MOP_RAID_NO</option>
                     <option value="normal">MOD_WOW_RAID_PROGRESS_MOP_RAID_NORMAL</option>
                     <option value="heroic">MOD_WOW_RAID_PROGRESS_MOP_RAID_HEROIC</option>
+                    <option value="mythic">MOD_WOW_RAID_PROGRESS_MOP_RAID_MYTHIC</option>
                 </field>
                 <field name="adjust_60143" default="auto" type="radio" class="btn-group" label="MOD_WOW_RAID_PROGRESS_MOP_NPC_60143">
                     <option value="auto">MOD_WOW_RAID_PROGRESS_MOP_RAID_AUTO</option>
                     <option value="no">MOD_WOW_RAID_PROGRESS_MOP_RAID_NO</option>
                     <option value="normal">MOD_WOW_RAID_PROGRESS_MOP_RAID_NORMAL</option>
                     <option value="heroic">MOD_WOW_RAID_PROGRESS_MOP_RAID_HEROIC</option>
+                    <option value="mythic">MOD_WOW_RAID_PROGRESS_MOP_RAID_MYTHIC</option>
                 </field>
                 <field name="adjust_61421" default="auto" type="radio" class="btn-group" label="MOD_WOW_RAID_PROGRESS_MOP_NPC_61421">
                     <option value="auto">MOD_WOW_RAID_PROGRESS_MOP_RAID_AUTO</option>
                     <option value="no">MOD_WOW_RAID_PROGRESS_MOP_RAID_NO</option>
                     <option value="normal">MOD_WOW_RAID_PROGRESS_MOP_RAID_NORMAL</option>
                     <option value="heroic">MOD_WOW_RAID_PROGRESS_MOP_RAID_HEROIC</option>
+                    <option value="mythic">MOD_WOW_RAID_PROGRESS_MOP_RAID_MYTHIC</option>
                 </field>
                 <field name="adjust_60410" default="auto" type="radio" class="btn-group" label="MOD_WOW_RAID_PROGRESS_MOP_NPC_60410">
                     <option value="auto">MOD_WOW_RAID_PROGRESS_MOP_RAID_AUTO</option>
                     <option value="no">MOD_WOW_RAID_PROGRESS_MOP_RAID_NO</option>
                     <option value="normal">MOD_WOW_RAID_PROGRESS_MOP_RAID_NORMAL</option>
                     <option value="heroic">MOD_WOW_RAID_PROGRESS_MOP_RAID_HEROIC</option>
+                    <option value="mythic">MOD_WOW_RAID_PROGRESS_MOP_RAID_MYTHIC</option>
                 </field>
                 <field name="adjust_60400" default="auto" type="radio" class="btn-group" label="MOD_WOW_RAID_PROGRESS_MOP_NPC_60400">
                     <option value="auto">MOD_WOW_RAID_PROGRESS_MOP_RAID_AUTO</option>
                     <option value="no">MOD_WOW_RAID_PROGRESS_MOP_RAID_NO</option>
                     <option value="normal">MOD_WOW_RAID_PROGRESS_MOP_RAID_NORMAL</option>
                     <option value="heroic">MOD_WOW_RAID_PROGRESS_MOP_RAID_HEROIC</option>
+                    <option value="mythic">MOD_WOW_RAID_PROGRESS_MOP_RAID_MYTHIC</option>
                 </field>
             </fieldset>
         </fields>

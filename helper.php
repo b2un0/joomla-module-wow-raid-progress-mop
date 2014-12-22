@@ -416,7 +416,7 @@ class ModWowRaidProgressMopHelper extends WoWModuleAbstract
                 $zone['stats']['mode'] = 'mythic';
             }
 
-            $zone['opened'] = in_array($zoneId, (array)$this->params->module->get('opened'));
+            $zone['collapsed'] = in_array($zoneId, (array)$this->params->module->get('collapsed'));
 
             $zone['stats']['bosses'] = count($zone['npcs']);
             $zone['stats']['percent'] = round(($zone['stats']['kills'] / $zone['stats']['bosses']) * 100);
