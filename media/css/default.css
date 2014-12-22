@@ -69,7 +69,8 @@
 }
 
 .mod_wow_raid_progress_mop .normal,
-.mod_wow_raid_progress_mop .heroic {
+.mod_wow_raid_progress_mop .heroic,
+.mod_wow_raid_progress_mop .mythic {
     display: inline-block;
     float: right;
     width: 18px;
@@ -79,34 +80,38 @@
 }
 
 .mod_wow_raid_progress_mop .normal {
-    background-image: url('./images/normal.png');
+    background-image: url('../images/normal.png');
 }
 
 .mod_wow_raid_progress_mop .heroic {
-    background-image: url('./images/heroic.png');
+    background-image: url('../images/heroic.png');
+}
+
+.mod_wow_raid_progress_mop .mythic {
+    background-image: url('../images/mythic.png');
 }
 
 .mod_wow_raid_progress_mop .z6738 {
-    background: url('images/z6738.jpg') no-repeat top left;
+    background: url('../images/z6738.jpg') no-repeat top left;
     max-height: 350px;
 }
 
 .mod_wow_raid_progress_mop .z6622 {
-    background: url('./images/z6622.jpg') no-repeat top right;
+    background: url('../images/z6622.jpg') no-repeat top right;
     max-height: 330px;
 }
 
 .mod_wow_raid_progress_mop .z6067 {
-    background: url('./images/z6067.png') no-repeat top center;
+    background: url('../images/z6067.png') no-repeat top center;
     max-height: 170px;
 }
 
 .mod_wow_raid_progress_mop .z6297 {
-    background: url('images/z6297.jpg') no-repeat top center;
+    background: url('../images/z6297.jpg') no-repeat top center;
     max-height: 170px;
 }
 
 .mod_wow_raid_progress_mop .z6125 {
-    background: url('./images/z6125.png') no-repeat top left;
+    background: url('../images/z6125.png') no-repeat top left;
     max-height: 190px;
 }

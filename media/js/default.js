@@ -11,6 +11,6 @@ window.wow.mod_wow_raid_progress_mop = function () {
     });
 }
 
-if (jQuery) {
+if (typeof jQuery != 'undefined') {
     jQuery(document).ready(window.wow.mod_wow_raid_progress_mop);
 }
