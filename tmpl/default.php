@@ -36,7 +36,8 @@ JFactory::getDocument()->addScript('media/' . $module->module . '/js/default.js'
                         <?php foreach ($zone['npcs'] as $npc => $data) : ?>
                             <li class="npc">
                                 <?php echo JHtml::_('link', $data['link'], JText::_('MOD_WOW_RAID_PROGRESS_MOP_NPC_' . $npc), array('target' => '_blank')); ?>
-                                <span class="<?php echo ($data['heroic'] === true) ? ' heroic' : (($data['normal'] === true) ? ' normal' : ''); ?>"> </span>
+                                <span class="<?php if ($data['mythic'] === true) echo ' mythic'; elseif ($data['heroic'] === true) echo ' heroic';
+                                elseif ($data['normal'] === true) echo ' normal'; ?>"> </span>
                             </li>
                         <?php endforeach; ?>
                     </ul>
